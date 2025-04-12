@@ -1,13 +1,11 @@
 import os
 import subprocess
 
-# Códigos ANSI
 AZUL = "\033[94m"
 CIANO = "\033[96m"
 VERMELHO = "\033[91m"
 RESET = "\033[0m"
 
-# Caminho da pasta onde estão os arquivos
 PASTA_DATABASE = "database"
 
 # ASCII Art
